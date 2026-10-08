@@ -161,6 +161,12 @@ rounding_choice = st.sidebar.selectbox(
 )
 selected_rounding = RoundingUnit(rounding_choice)
 
+st.sidebar.markdown("---")
+st.sidebar.markdown(
+    "🌐 **Live Web App:**  \n[trial-balance-to-schedule-iii.streamlit.app](https://trial-balance-to-schedule-iii-mapping-dakt9tfzyfhhwg4lck3nvt.streamlit.app/)\n\n"
+    "🐙 **GitHub Repo:**  \n[SaanviPathak-git/Trial-Balance-to-Schedule-III-Mapping](https://github.com/SaanviPathak-git/Trial-Balance-to-Schedule-III-Mapping)"
+)
+
 # Main Dashboard
 if st.session_state.raw_df is None or st.session_state.raw_df.empty:
     st.info("👋 Welcome! Please select a built-in sample TB from the sidebar or upload your company's trial balance to start.")

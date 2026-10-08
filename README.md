@@ -1,5 +1,16 @@
 # ⚖️ Trial Balance to Schedule III Finalisation Engine
 
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://trial-balance-to-schedule-iii-mapping-dakt9tfzyfhhwg4lck3nvt.streamlit.app/)
+[![Python 3.12](https://img.shields.io/badge/python-3.12-blue.svg)](https://www.python.org/)
+[![Tests](https://img.shields.io/badge/tests-21%20passed-brightgreen.svg)](https://github.com/SaanviPathak-git/Trial-Balance-to-Schedule-III-Mapping)
+[![Compliance](https://img.shields.io/badge/Schedule%20III-Div%20I%20%26%20II-navy.svg)](https://github.com/SaanviPathak-git/Trial-Balance-to-Schedule-III-Mapping)
+
+> 🌐 **Live Web Application:**  
+> **👉 [https://trial-balance-to-schedule-iii-mapping-dakt9tfzyfhhwg4lck3nvt.streamlit.app/](https://trial-balance-to-schedule-iii-mapping-dakt9tfzyfhhwg4lck3nvt.streamlit.app/)**  
+> *(Instant access — explore live with preloaded ₹500 Cr Ind AS & ₹250 Cr AS trial balances, or upload your own).*
+
+---
+
 A production-grade, CA-level statutory finalisation tool that transforms a company's raw Trial Balance (TB) into compliant **Schedule III Financial Statements** (Balance Sheet, Statement of Profit and Loss, and Notes to Accounts) under the **Companies Act, 2013**.
 
 Built specifically for Chartered Accountants, Statutory Auditors, CFOs, and Investment Analysts, this tool moves beyond simple account lookups by embedding a **rigorous CA Judgement Layer** covering classification, grossing up, contra presentation, tax netting, statutory MSME disclosures, and the **11 mandatory MCA Schedule III ratios**.
