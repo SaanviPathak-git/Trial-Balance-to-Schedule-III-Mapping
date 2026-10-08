@@ -209,7 +209,7 @@ expander_title = (
     else "✍️ Year-End Adjustments in Plain English (Optional: Closing Stock, Depreciation, Accruals, JVs)"
 )
 
-with st.expander(expander_title, expanded=(num_active_lines > 0)):
+with st.expander(expander_title, expanded=True):
     st.markdown(
         "Enter statutory year-end audit adjustments in **natural English** (one entry per line). "
         "The engine parses amounts, identifies debit & credit heads, and generates balanced double-entry JVs updating the Trial Balance."
@@ -362,9 +362,37 @@ with tab_checks:
 with tab_adj:
     st.subheader("✍️ Year-End Audit Adjustments & Posted Journal Vouchers")
     st.caption("Review natural language adjustment entries, double-entry JV voucher schedule, and ledger-level pre/post comparison.")
-    
+
+    with st.expander("📝 Enter or Edit Adjustment Entries Directly Here", expanded=(not bool(parsed_jvs))):
+        with st.form("tab2_adjustment_form"):
+            t2_input = st.text_area(
+                "Type adjustment entries in plain English (one per line):",
+                value=st.session_state.adjustments_text,
+                height=130,
+                placeholder="Closing stock valued at ₹ 4,50,00,000\nProvide depreciation of 25 lakhs on Plant & Machinery\nOutstanding audit fee of ₹ 1,50,000\nPrepaid insurance of ₹ 2,00,000\nProvide current tax of ₹ 35,00,000",
+                key="tab2_adj_textarea"
+            )
+            col_t1, col_t2 = st.columns([1, 1])
+            with col_t1:
+                apply_t2 = st.form_submit_button("🚀 Apply Adjustments")
+            with col_t2:
+                load_sample_t2 = st.form_submit_button("⚡ Load Sample Adjustments")
+
+            if apply_t2:
+                st.session_state.adjustments_text = t2_input
+                st.rerun()
+            if load_sample_t2:
+                st.session_state.adjustments_text = (
+                    "Closing stock valued at ₹ 4,50,00,000\n"
+                    "Provide depreciation of 25 lakhs on Plant & Machinery\n"
+                    "Outstanding audit fee of ₹ 1,50,000 to be provided\n"
+                    "Prepaid insurance of ₹ 2,00,000 to be carried forward\n"
+                    "Provide current tax of ₹ 35,00,000"
+                )
+                st.rerun()
+
     if not parsed_jvs:
-        st.info("ℹ️ No adjustment entries active. You can enter natural English adjustments in the expander box above or load the sample template.")
+        st.info("ℹ️ No adjustment entries currently applied. Enter them in the box above or click '⚡ Load Sample Adjustments' to test.")
     else:
         adj_col1, adj_col2, adj_col3 = st.columns(3)
         total_adj_amt = sum(j.amount for j in parsed_jvs)
