@@ -47,47 +47,18 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom Styling
+# Custom Styling (Theme-Adaptive)
 st.markdown("""
 <style>
     .main-title {
         font-size: 2.2rem;
         font-weight: 800;
-        color: #1B365D;
         margin-bottom: 0.2rem;
     }
     .sub-title {
         font-size: 1.05rem;
-        color: #4A5568;
+        opacity: 0.85;
         margin-bottom: 1.5rem;
-    }
-    .metric-card {
-        background-color: #F8FAFC;
-        border-radius: 8px;
-        padding: 16px;
-        border: 1px solid #E2E8F0;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    }
-    .status-pass {
-        background-color: #ECFDF5;
-        border-left: 5px solid #10B981;
-        padding: 12px 16px;
-        border-radius: 4px;
-        margin-bottom: 8px;
-    }
-    .status-fail {
-        background-color: #FEF2F2;
-        border-left: 5px solid #EF4444;
-        padding: 12px 16px;
-        border-radius: 4px;
-        margin-bottom: 8px;
-    }
-    .status-warn {
-        background-color: #FFFBEB;
-        border-left: 5px solid #F59E0B;
-        padding: 12px 16px;
-        border-radius: 4px;
-        margin-bottom: 8px;
     }
     .stTabs [data-baseweb="tab-list"] {
         gap: 8px;
@@ -266,16 +237,12 @@ with tab_checks:
         if len(unmapped_df) > 0:
             st.warning(f"There are **{len(unmapped_df)} unmapped ledgers** in the queue. Schedule III requires 100% mapping coverage.")
     else:
-        # Display 4 golden checks panels
+        # Display 4 golden checks panels (Theme-Adaptive)
         for chk in audit_summary.checks:
-            css_class = "status-pass" if chk.is_passed else "status-fail"
-            icon = "✅" if chk.is_passed else "❌"
-            st.markdown(f"""
-            <div class='{css_class}'>
-                <strong>{icon} {chk.name}</strong><br>
-                <span>{chk.summary_message}</span>
-            </div>
-            """, unsafe_allow_html=True)
+            if chk.is_passed:
+                st.success(f"**{chk.name}**\n\n{chk.summary_message}", icon="✅")
+            else:
+                st.error(f"**{chk.name}**\n\n{chk.summary_message}", icon="❌")
 
         st.markdown("---")
         # Validation Issues List
