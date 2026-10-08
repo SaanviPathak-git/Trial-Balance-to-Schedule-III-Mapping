@@ -411,7 +411,7 @@ with tab_adj:
 
     st.markdown("---")
     st.subheader("💡 English Adjustment Syntax & Examples Guide")
-    st.markdown(\"\"\"
+    st.markdown("""
     The natural language parser supports everyday audit adjustments in plain English:
     
     | Category | Example English Phrasing | Debit Account | Credit Account |
@@ -425,7 +425,7 @@ with tab_adj:
     | **Tax Provision** | `Provide current tax of ₹ 35,00,000` | Current Tax Expense (P&L) | Provision for Tax (Current Liabilities) |
     | **Reserves Transfer** | `Transfer ₹ 10,00,000 to General Reserve` | Retained Earnings | General Reserve |
     | **Custom Double Entry** | `Debit Rent ₹ 50,000 and Credit Rent Payable ₹ 50,000` or `Dr Salaries 100000, Cr Salaries Payable 100000` | User Debit Account | User Credit Account |
-    \"\"\")
+    """)
 
 # TAB 3: BALANCE SHEET & P&L
 with tab_stmts:
