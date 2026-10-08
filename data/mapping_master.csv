@@ -1,0 +1,298 @@
+keyword_or_pattern,division_i_line_item,division_ii_line_item,statement_type,category,default_dr_cr,ca_rule_tag
+Equity Share Capital,Share Capital,Equity Share capital,Balance Sheet,Equity,Cr,EQUITY_CAPITAL
+Authorised Share Capital,Share Capital,Equity Share capital,Balance Sheet,Equity,Cr,EQUITY_CAPITAL
+Paid up Capital - Equity,Share Capital,Equity Share capital,Balance Sheet,Equity,Cr,EQUITY_CAPITAL
+Preference Share Capital,Share Capital,Other Equity,Balance Sheet,Equity,Cr,PREF_CAPITAL
+Securities Premium Account,Reserves and Surplus,Other Equity,Balance Sheet,Equity,Cr,RESERVES
+Securities Premium Reserve,Reserves and Surplus,Other Equity,Balance Sheet,Equity,Cr,RESERVES
+General Reserve,Reserves and Surplus,Other Equity,Balance Sheet,Equity,Cr,RESERVES
+Capital Reserve,Reserves and Surplus,Other Equity,Balance Sheet,Equity,Cr,RESERVES
+Capital Redemption Reserve,Reserves and Surplus,Other Equity,Balance Sheet,Equity,Cr,RESERVES
+Debenture Redemption Reserve,Reserves and Surplus,Other Equity,Balance Sheet,Equity,Cr,RESERVES
+Retained Earnings,Reserves and Surplus,Other Equity,Balance Sheet,Equity,Cr,RESERVES
+Profit and Loss Account Opening,Reserves and Surplus,Other Equity,Balance Sheet,Equity,Cr,PL_SURPLUS_OPENING
+Surplus in P&L Account,Reserves and Surplus,Other Equity,Balance Sheet,Equity,Cr,PL_SURPLUS_OPENING
+Share Application Money Pending Allotment,Share application money pending allotment,Other Equity,Balance Sheet,Equity,Cr,SHARE_APP_MONEY
+Term Loan - HDFC Bank,Long-term borrowings,Financial Liabilities - Non-current Borrowings,Balance Sheet,Non-Current Liabilities,Cr,LONG_TERM_BORROWING
+Term Loan - SBI,Long-term borrowings,Financial Liabilities - Non-current Borrowings,Balance Sheet,Non-Current Liabilities,Cr,LONG_TERM_BORROWING
+Term Loan from ICICI Bank,Long-term borrowings,Financial Liabilities - Non-current Borrowings,Balance Sheet,Non-Current Liabilities,Cr,LONG_TERM_BORROWING
+Project Loan - Bank of Baroda,Long-term borrowings,Financial Liabilities - Non-current Borrowings,Balance Sheet,Non-Current Liabilities,Cr,LONG_TERM_BORROWING
+External Commercial Borrowings (ECB),Long-term borrowings,Financial Liabilities - Non-current Borrowings,Balance Sheet,Non-Current Liabilities,Cr,LONG_TERM_BORROWING
+Unsecured Loan from Directors,Long-term borrowings,Financial Liabilities - Non-current Borrowings,Balance Sheet,Non-Current Liabilities,Cr,LONG_TERM_BORROWING
+Inter-Corporate Deposit (Long Term),Long-term borrowings,Financial Liabilities - Non-current Borrowings,Balance Sheet,Non-Current Liabilities,Cr,LONG_TERM_BORROWING
+Non-Convertible Debentures (NCD),Long-term borrowings,Financial Liabilities - Non-current Borrowings,Balance Sheet,Non-Current Liabilities,Cr,LONG_TERM_BORROWING
+Current Maturities of Long Term Debt,Short-term borrowings,Financial Liabilities - Current Borrowings,Balance Sheet,Current Liabilities,Cr,CURRENT_MATURITY_LTD
+Current Maturities of Term Loan,Short-term borrowings,Financial Liabilities - Current Borrowings,Balance Sheet,Current Liabilities,Cr,CURRENT_MATURITY_LTD
+Bank Overdraft Account - SBI,Short-term borrowings,Financial Liabilities - Current Borrowings,Balance Sheet,Current Liabilities,Cr,BANK_OD
+Cash Credit Account - HDFC,Short-term borrowings,Financial Liabilities - Current Borrowings,Balance Sheet,Current Liabilities,Cr,BANK_OD
+Working Capital Demand Loan (WCDL),Short-term borrowings,Financial Liabilities - Current Borrowings,Balance Sheet,Current Liabilities,Cr,SHORT_TERM_BORROWING
+Packing Credit Loan,Short-term borrowings,Financial Liabilities - Current Borrowings,Balance Sheet,Current Liabilities,Cr,SHORT_TERM_BORROWING
+Buyers Credit,Short-term borrowings,Financial Liabilities - Current Borrowings,Balance Sheet,Current Liabilities,Cr,SHORT_TERM_BORROWING
+Commercial Paper,Short-term borrowings,Financial Liabilities - Current Borrowings,Balance Sheet,Current Liabilities,Cr,SHORT_TERM_BORROWING
+Lease Obligation - Non Current,Long-term borrowings,Financial Liabilities - Non-current Lease liabilities,Balance Sheet,Non-Current Liabilities,Cr,LEASE_LIABILITY_NC
+Lease Obligation - Current,Other current liabilities,Financial Liabilities - Current Lease liabilities,Balance Sheet,Current Liabilities,Cr,LEASE_LIABILITY_C
+Provision for Gratuity (Non-Current),Long-term provisions,Non-current Provisions,Balance Sheet,Non-Current Liabilities,Cr,PROVISION_NC
+Provision for Leave Encashment (Non-Current),Long-term provisions,Non-current Provisions,Balance Sheet,Non-Current Liabilities,Cr,PROVISION_NC
+Deferred Tax Liability,Deferred tax liabilities (Net),Deferred tax liabilities (Net),Balance Sheet,Non-Current Liabilities,Cr,DEFERRED_TAX_LIABILITY
+Security Deposits Received from Dealers,Other Long term liabilities,Financial Liabilities - Other non-current financial liabilities,Balance Sheet,Non-Current Liabilities,Cr,OTHER_LIABILITY_NC
+Provision for Gratuity (Current),Short-term provisions,Current Provisions,Balance Sheet,Current Liabilities,Cr,PROVISION_C
+Provision for Leave Encashment (Current),Short-term provisions,Current Provisions,Balance Sheet,Current Liabilities,Cr,PROVISION_C
+Provision for Bonus,Short-term provisions,Current Provisions,Balance Sheet,Current Liabilities,Cr,PROVISION_C
+Provision for Warranties,Short-term provisions,Current Provisions,Balance Sheet,Current Liabilities,Cr,PROVISION_C
+Provision for Tax - AY 2024-25,Short-term provisions,Current tax liabilities (Net),Balance Sheet,Current Liabilities,Cr,PROVISION_FOR_TAX
+Provision for Tax - Current Year,Short-term provisions,Current tax liabilities (Net),Balance Sheet,Current Liabilities,Cr,PROVISION_FOR_TAX
+Sundry Creditors - Micro Enterprises,Trade payables - Dues of MSME,Financial Liabilities - Trade payables - Dues of MSME,Balance Sheet,Current Liabilities,Cr,MSME_PAYABLE
+Sundry Creditors - Small Enterprises,Trade payables - Dues of MSME,Financial Liabilities - Trade payables - Dues of MSME,Balance Sheet,Current Liabilities,Cr,MSME_PAYABLE
+Trade Payables - MSME Vendors,Trade payables - Dues of MSME,Financial Liabilities - Trade payables - Dues of MSME,Balance Sheet,Current Liabilities,Cr,MSME_PAYABLE
+Sundry Creditors - Raw Material,Trade payables - Dues of creditors other than MSME,Financial Liabilities - Trade payables - Dues of Others,Balance Sheet,Current Liabilities,Cr,NON_MSME_PAYABLE
+Sundry Creditors - Packaging Material,Trade payables - Dues of creditors other than MSME,Financial Liabilities - Trade payables - Dues of Others,Balance Sheet,Current Liabilities,Cr,NON_MSME_PAYABLE
+Sundry Creditors - Capital Goods,Other current liabilities,Financial Liabilities - Other current financial liabilities,Balance Sheet,Current Liabilities,Cr,CAPITAL_CREDITOR
+Sundry Creditors - Services,Trade payables - Dues of creditors other than MSME,Financial Liabilities - Trade payables - Dues of Others,Balance Sheet,Current Liabilities,Cr,NON_MSME_PAYABLE
+Trade Payables - General Vendors,Trade payables - Dues of creditors other than MSME,Financial Liabilities - Trade payables - Dues of Others,Balance Sheet,Current Liabilities,Cr,NON_MSME_PAYABLE
+Creditor with Debit Balance,Other current assets,Other current assets,Balance Sheet,Current Assets,Dr,CREDITOR_DEBIT_BAL
+Advance Received from Customers,Other current liabilities,Other current liabilities,Balance Sheet,Current Liabilities,Cr,ADVANCE_FROM_CUSTOMERS
+Customer Advances,Other current liabilities,Other current liabilities,Balance Sheet,Current Liabilities,Cr,ADVANCE_FROM_CUSTOMERS
+Outstanding Expenses,Other current liabilities,Other current liabilities,Balance Sheet,Current Liabilities,Cr,OUTSTANDING_EXPENSE
+Salaries Payable,Other current liabilities,Other current liabilities,Balance Sheet,Current Liabilities,Cr,OUTSTANDING_EXPENSE
+Wages Payable,Other current liabilities,Other current liabilities,Balance Sheet,Current Liabilities,Cr,OUTSTANDING_EXPENSE
+Audit Fees Payable,Other current liabilities,Other current liabilities,Balance Sheet,Current Liabilities,Cr,OUTSTANDING_EXPENSE
+Directors Remuneration Payable,Other current liabilities,Other current liabilities,Balance Sheet,Current Liabilities,Cr,OUTSTANDING_EXPENSE
+Rent Payable,Other current liabilities,Other current liabilities,Balance Sheet,Current Liabilities,Cr,OUTSTANDING_EXPENSE
+Electricity Charges Payable,Other current liabilities,Other current liabilities,Balance Sheet,Current Liabilities,Cr,OUTSTANDING_EXPENSE
+Interest Accrued but not due on borrowings,Other current liabilities,Financial Liabilities - Other current financial liabilities,Balance Sheet,Current Liabilities,Cr,INTEREST_ACCRUED
+Interest Accrued and due on borrowings,Other current liabilities,Financial Liabilities - Other current financial liabilities,Balance Sheet,Current Liabilities,Cr,INTEREST_ACCRUED
+Unclaimed Dividend,Other current liabilities,Financial Liabilities - Other current financial liabilities,Balance Sheet,Current Liabilities,Cr,OTHER_CURRENT_LIABILITY
+GST Output - CGST Payable,Other current liabilities,Other current liabilities,Balance Sheet,Current Liabilities,Cr,GST_OUTPUT
+GST Output - SGST Payable,Other current liabilities,Other current liabilities,Balance Sheet,Current Liabilities,Cr,GST_OUTPUT
+GST Output - IGST Payable,Other current liabilities,Other current liabilities,Balance Sheet,Current Liabilities,Cr,GST_OUTPUT
+TDS Payable on Salaries (192),Other current liabilities,Other current liabilities,Balance Sheet,Current Liabilities,Cr,STATUTORY_DUES_PAYABLE
+TDS Payable on Contractors (194C),Other current liabilities,Other current liabilities,Balance Sheet,Current Liabilities,Cr,STATUTORY_DUES_PAYABLE
+TDS Payable on Professional Fees (194J),Other current liabilities,Other current liabilities,Balance Sheet,Current Liabilities,Cr,STATUTORY_DUES_PAYABLE
+TDS Payable on Rent (194I),Other current liabilities,Other current liabilities,Balance Sheet,Current Liabilities,Cr,STATUTORY_DUES_PAYABLE
+TCS Payable,Other current liabilities,Other current liabilities,Balance Sheet,Current Liabilities,Cr,STATUTORY_DUES_PAYABLE
+Provident Fund Payable (PF),Other current liabilities,Other current liabilities,Balance Sheet,Current Liabilities,Cr,STATUTORY_DUES_PAYABLE
+ESIC Payable,Other current liabilities,Other current liabilities,Balance Sheet,Current Liabilities,Cr,STATUTORY_DUES_PAYABLE
+Professional Tax Payable,Other current liabilities,Other current liabilities,Balance Sheet,Current Liabilities,Cr,STATUTORY_DUES_PAYABLE
+Freehold Land,"Property, Plant and Equipment (Tangible Assets)","Property, Plant and Equipment",Balance Sheet,Non-Current Assets,Dr,PPE_ASSET
+Factory Buildings,"Property, Plant and Equipment (Tangible Assets)","Property, Plant and Equipment",Balance Sheet,Non-Current Assets,Dr,PPE_ASSET
+Office Premises,"Property, Plant and Equipment (Tangible Assets)","Property, Plant and Equipment",Balance Sheet,Non-Current Assets,Dr,PPE_ASSET
+Plant and Machinery,"Property, Plant and Equipment (Tangible Assets)","Property, Plant and Equipment",Balance Sheet,Non-Current Assets,Dr,PPE_ASSET
+Electrical Installations,"Property, Plant and Equipment (Tangible Assets)","Property, Plant and Equipment",Balance Sheet,Non-Current Assets,Dr,PPE_ASSET
+Furniture and Fixtures,"Property, Plant and Equipment (Tangible Assets)","Property, Plant and Equipment",Balance Sheet,Non-Current Assets,Dr,PPE_ASSET
+Office Equipment,"Property, Plant and Equipment (Tangible Assets)","Property, Plant and Equipment",Balance Sheet,Non-Current Assets,Dr,PPE_ASSET
+Computers and Servers,"Property, Plant and Equipment (Tangible Assets)","Property, Plant and Equipment",Balance Sheet,Non-Current Assets,Dr,PPE_ASSET
+Motor Vehicles / Trucks,"Property, Plant and Equipment (Tangible Assets)","Property, Plant and Equipment",Balance Sheet,Non-Current Assets,Dr,PPE_ASSET
+Laboratory Equipment,"Property, Plant and Equipment (Tangible Assets)","Property, Plant and Equipment",Balance Sheet,Non-Current Assets,Dr,PPE_ASSET
+Leasehold Improvements,"Property, Plant and Equipment (Tangible Assets)","Property, Plant and Equipment",Balance Sheet,Non-Current Assets,Dr,PPE_ASSET
+Right-of-Use Asset - Factory Lease,"Property, Plant and Equipment (Tangible Assets)",Right-of-use assets,Balance Sheet,Non-Current Assets,Dr,ROU_ASSET
+Capital Work in Progress - New Unit,Capital work-in-progress,Capital work-in-progress,Balance Sheet,Non-Current Assets,Dr,CWIP
+CWIP - Plant Expansion,Capital work-in-progress,Capital work-in-progress,Balance Sheet,Non-Current Assets,Dr,CWIP
+Accumulated Depreciation - Buildings,"Property, Plant and Equipment (Tangible Assets)","Property, Plant and Equipment",Balance Sheet,Non-Current Assets,Cr,ACCUMULATED_DEPRECIATION
+Accumulated Depreciation - Plant & Machinery,"Property, Plant and Equipment (Tangible Assets)","Property, Plant and Equipment",Balance Sheet,Non-Current Assets,Cr,ACCUMULATED_DEPRECIATION
+Accumulated Depreciation - Vehicles,"Property, Plant and Equipment (Tangible Assets)","Property, Plant and Equipment",Balance Sheet,Non-Current Assets,Cr,ACCUMULATED_DEPRECIATION
+Accumulated Depreciation - Furniture,"Property, Plant and Equipment (Tangible Assets)","Property, Plant and Equipment",Balance Sheet,Non-Current Assets,Cr,ACCUMULATED_DEPRECIATION
+Accumulated Depreciation - Computers,"Property, Plant and Equipment (Tangible Assets)","Property, Plant and Equipment",Balance Sheet,Non-Current Assets,Cr,ACCUMULATED_DEPRECIATION
+Computer Software Licenses,Intangible assets,Other Intangible assets,Balance Sheet,Non-Current Assets,Dr,INTANGIBLE_ASSET
+Trademarks and Brand Names,Intangible assets,Other Intangible assets,Balance Sheet,Non-Current Assets,Dr,INTANGIBLE_ASSET
+Goodwill on Acquisition,Intangible assets,Goodwill,Balance Sheet,Non-Current Assets,Dr,INTANGIBLE_ASSET
+Technical Know-How,Intangible assets,Other Intangible assets,Balance Sheet,Non-Current Assets,Dr,INTANGIBLE_ASSET
+Intangibles under development - ERP,Intangible assets under development,Intangible assets under development,Balance Sheet,Non-Current Assets,Dr,INTANGIBLE_DEV
+Investment in Subsidiary Shares,Non-current investments,Financial Assets - Non-current Investments,Balance Sheet,Non-Current Assets,Dr,NON_CURRENT_INVESTMENT
+Investment in Equity Shares (Quoted),Non-current investments,Financial Assets - Non-current Investments,Balance Sheet,Non-Current Assets,Dr,NON_CURRENT_INVESTMENT
+Investment in Government Securities,Non-current investments,Financial Assets - Non-current Investments,Balance Sheet,Non-Current Assets,Dr,NON_CURRENT_INVESTMENT
+Fixed Deposit with Bank (>12 Months),Other non-current assets,Financial Assets - Non-current Investments,Balance Sheet,Non-Current Assets,Dr,NON_CURRENT_INVESTMENT
+Deferred Tax Asset,Deferred tax assets (Net),Deferred tax assets (Net),Balance Sheet,Non-Current Assets,Dr,DEFERRED_TAX_ASSET
+Security Deposits (Long Term),Long-term loans and advances,Financial Assets - Non-current Loans,Balance Sheet,Non-Current Assets,Dr,LONG_TERM_ADVANCES
+Capital Advances to Suppliers,Long-term loans and advances,Other non-current assets,Balance Sheet,Non-Current Assets,Dr,CAPITAL_ADVANCES
+Raw Materials Inventory,Inventories,Inventories,Balance Sheet,Current Assets,Dr,INVENTORY_RAW_MATERIAL
+Stock of Raw Materials,Inventories,Inventories,Balance Sheet,Current Assets,Dr,INVENTORY_RAW_MATERIAL
+Work in Progress Inventory (WIP),Inventories,Inventories,Balance Sheet,Current Assets,Dr,INVENTORY_WIP
+Stock of Semi-Finished Goods,Inventories,Inventories,Balance Sheet,Current Assets,Dr,INVENTORY_WIP
+Finished Goods Inventory,Inventories,Inventories,Balance Sheet,Current Assets,Dr,INVENTORY_FINISHED_GOODS
+Stock of Finished Goods,Inventories,Inventories,Balance Sheet,Current Assets,Dr,INVENTORY_FINISHED_GOODS
+Stock-in-Trade (Traded Goods),Inventories,Inventories,Balance Sheet,Current Assets,Dr,INVENTORY_STOCK_IN_TRADE
+Stores and Spares Inventory,Inventories,Inventories,Balance Sheet,Current Assets,Dr,INVENTORY_STORES
+Packing Materials Inventory,Inventories,Inventories,Balance Sheet,Current Assets,Dr,INVENTORY_PACKING
+Goods in Transit - Raw Materials,Inventories,Inventories,Balance Sheet,Current Assets,Dr,INVENTORY_IN_TRANSIT
+Sundry Debtors - Domestic,Trade receivables,Financial Assets - Trade receivables,Balance Sheet,Current Assets,Dr,TRADE_RECEIVABLES
+Sundry Debtors - Export,Trade receivables,Financial Assets - Trade receivables,Balance Sheet,Current Assets,Dr,TRADE_RECEIVABLES
+Trade Receivables - Institutional Clients,Trade receivables,Financial Assets - Trade receivables,Balance Sheet,Current Assets,Dr,TRADE_RECEIVABLES
+Trade Receivables - Retailers,Trade receivables,Financial Assets - Trade receivables,Balance Sheet,Current Assets,Dr,TRADE_RECEIVABLES
+Provision for Doubtful Debts,Trade receivables,Financial Assets - Trade receivables,Balance Sheet,Current Assets,Cr,PROVISION_DOUBTFUL_DEBTS
+Allowance for Expected Credit Losses (ECL),Trade receivables,Financial Assets - Trade receivables,Balance Sheet,Current Assets,Cr,PROVISION_DOUBTFUL_DEBTS
+Debtor with Credit Balance,Other current liabilities,Other current liabilities,Balance Sheet,Current Liabilities,Cr,DEBTOR_CREDIT_BAL
+Unbilled Revenue,Other current assets,Financial Assets - Other current financial assets,Balance Sheet,Current Assets,Dr,OTHER_CURRENT_ASSET
+Cash in Hand,Cash and bank balances,Financial Assets - Cash and cash equivalents,Balance Sheet,Current Assets,Dr,CASH_IN_HAND
+Petty Cash,Cash and bank balances,Financial Assets - Cash and cash equivalents,Balance Sheet,Current Assets,Dr,CASH_IN_HAND
+HDFC Bank - Current Account,Cash and bank balances,Financial Assets - Cash and cash equivalents,Balance Sheet,Current Assets,Dr,BANK_BALANCE
+SBI - Current Account,Cash and bank balances,Financial Assets - Cash and cash equivalents,Balance Sheet,Current Assets,Dr,BANK_BALANCE
+ICICI Bank - Escrow Account,Cash and bank balances,Financial Assets - Bank balances other than cash equivalents,Balance Sheet,Current Assets,Dr,RESTRICTED_BANK_BALANCE
+Unpaid Dividend Account - Axis Bank,Cash and bank balances,Financial Assets - Bank balances other than cash equivalents,Balance Sheet,Current Assets,Dr,RESTRICTED_BANK_BALANCE
+Short Term Fixed Deposit (<12 Months),Cash and bank balances,Financial Assets - Bank balances other than cash equivalents,Balance Sheet,Current Assets,Dr,BANK_DEPOSIT_CURRENT
+Current Investments in Liquid Mutual Funds,Current investments,Financial Assets - Current Investments,Balance Sheet,Current Assets,Dr,CURRENT_INVESTMENT
+Advance to Suppliers / Vendors,Other current assets,Other current assets,Balance Sheet,Current Assets,Dr,ADVANCE_TO_SUPPLIERS
+Advances to Staff & Employees,Short-term loans and advances,Financial Assets - Current Loans,Balance Sheet,Current Assets,Dr,STAFF_ADVANCE
+Prepaid Expenses,Other current assets,Other current assets,Balance Sheet,Current Assets,Dr,PREPAID_EXPENSE
+Prepaid Insurance,Other current assets,Other current assets,Balance Sheet,Current Assets,Dr,PREPAID_EXPENSE
+Prepaid Rent,Other current assets,Other current assets,Balance Sheet,Current Assets,Dr,PREPAID_EXPENSE
+Prepaid AMC Charges,Other current assets,Other current assets,Balance Sheet,Current Assets,Dr,PREPAID_EXPENSE
+GST Input - CGST Credit,Other current assets,Other current assets,Balance Sheet,Current Assets,Dr,GST_INPUT
+GST Input - SGST Credit,Other current assets,Other current assets,Balance Sheet,Current Assets,Dr,GST_INPUT
+GST Input - IGST Credit,Other current assets,Other current assets,Balance Sheet,Current Assets,Dr,GST_INPUT
+GST RCM Input Tax Credit,Other current assets,Other current assets,Balance Sheet,Current Assets,Dr,GST_INPUT
+TDS Receivable - FY 2023-24,Short-term loans and advances,Current tax assets (Net),Balance Sheet,Current Assets,Dr,TDS_RECEIVABLE
+TCS Receivable,Short-term loans and advances,Current tax assets (Net),Balance Sheet,Current Assets,Dr,TDS_RECEIVABLE
+Advance Tax Paid - FY 2023-24,Short-term loans and advances,Current tax assets (Net),Balance Sheet,Current Assets,Dr,ADVANCE_TAX
+Export Incentive Receivable (RoDTEP / RoSCTL),Other current assets,Other current assets,Balance Sheet,Current Assets,Dr,OTHER_CURRENT_ASSET
+GST Refund Claim Receivable,Other current assets,Other current assets,Balance Sheet,Current Assets,Dr,OTHER_CURRENT_ASSET
+Domestic Sales - Finished Goods,Revenue from operations,Revenue from operations,Profit & Loss,Income,Cr,REVENUE_SALES
+Export Sales,Revenue from operations,Revenue from operations,Profit & Loss,Income,Cr,REVENUE_SALES
+Sale of Traded Goods,Revenue from operations,Revenue from operations,Profit & Loss,Income,Cr,REVENUE_SALES
+Sale of Scrap / Waste,Revenue from operations,Revenue from operations,Profit & Loss,Income,Cr,REVENUE_OTHER_OPERATING
+Job Work & Processing Income,Revenue from operations,Revenue from operations,Profit & Loss,Income,Cr,REVENUE_SERVICES
+Freight & Handling Recoveries,Revenue from operations,Revenue from operations,Profit & Loss,Income,Cr,REVENUE_OTHER_OPERATING
+Sales Returns & Rebates,Revenue from operations,Revenue from operations,Profit & Loss,Income,Dr,REVENUE_DEDUCTION
+Cash Discount Allowed to Customers,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,SALES_DISCOUNT
+Interest Income on Fixed Deposits,Other income,Other income,Profit & Loss,Income,Cr,OTHER_INCOME_INTEREST
+Dividend Income from Mutual Funds,Other income,Other income,Profit & Loss,Income,Cr,OTHER_INCOME_DIVIDEND
+Profit on Sale of Fixed Assets,Other income,Other income,Profit & Loss,Income,Cr,OTHER_INCOME_GAIN
+Net Gain on Foreign Currency Fluctuation,Other income,Other income,Profit & Loss,Income,Cr,OTHER_INCOME_FOREX
+Rental Income from Property,Other income,Other income,Profit & Loss,Income,Cr,OTHER_INCOME_RENT
+Liabilities No Longer Required Written Back,Other income,Other income,Profit & Loss,Income,Cr,OTHER_INCOME_WRITEBACK
+Insurance Claims Received,Other income,Other income,Profit & Loss,Income,Cr,OTHER_INCOME_MISC
+Miscellaneous Income,Other income,Other income,Profit & Loss,Income,Cr,OTHER_INCOME_MISC
+Purchases of Raw Materials - Domestic,Cost of materials consumed,Cost of materials consumed,Profit & Loss,Expenses,Dr,RAW_MATERIAL_PURCHASE
+Import of Raw Materials,Cost of materials consumed,Cost of materials consumed,Profit & Loss,Expenses,Dr,RAW_MATERIAL_PURCHASE
+Freight Inward on Raw Materials,Cost of materials consumed,Cost of materials consumed,Profit & Loss,Expenses,Dr,RAW_MATERIAL_PURCHASE
+Customs Duty on Raw Materials,Cost of materials consumed,Cost of materials consumed,Profit & Loss,Expenses,Dr,RAW_MATERIAL_PURCHASE
+Purchases of Stock-in-Trade,Purchases of Stock-in-Trade,Purchases of Stock-in-Trade,Profit & Loss,Expenses,Dr,PURCHASE_TRADED
+Purchases of Traded Goods,Purchases of Stock-in-Trade,Purchases of Stock-in-Trade,Profit & Loss,Expenses,Dr,PURCHASE_TRADED
+Purchase Returns - Raw Materials,Cost of materials consumed,Cost of materials consumed,Profit & Loss,Expenses,Cr,RAW_MATERIAL_RETURN
+Opening Stock - Finished Goods,"Changes in inventories of finished goods, WIP and Stock-in-Trade","Changes in inventories of finished goods, WIP and Stock-in-Trade",Profit & Loss,Expenses,Dr,INVENTORY_CHG_OPENING_FG
+Closing Stock - Finished Goods,"Changes in inventories of finished goods, WIP and Stock-in-Trade","Changes in inventories of finished goods, WIP and Stock-in-Trade",Profit & Loss,Expenses,Cr,INVENTORY_CHG_CLOSING_FG
+Opening Stock - WIP,"Changes in inventories of finished goods, WIP and Stock-in-Trade","Changes in inventories of finished goods, WIP and Stock-in-Trade",Profit & Loss,Expenses,Dr,INVENTORY_CHG_OPENING_WIP
+Closing Stock - WIP,"Changes in inventories of finished goods, WIP and Stock-in-Trade","Changes in inventories of finished goods, WIP and Stock-in-Trade",Profit & Loss,Expenses,Cr,INVENTORY_CHG_CLOSING_WIP
+Opening Stock - Stock in Trade,"Changes in inventories of finished goods, WIP and Stock-in-Trade","Changes in inventories of finished goods, WIP and Stock-in-Trade",Profit & Loss,Expenses,Dr,INVENTORY_CHG_OPENING_TRADED
+Closing Stock - Stock in Trade,"Changes in inventories of finished goods, WIP and Stock-in-Trade","Changes in inventories of finished goods, WIP and Stock-in-Trade",Profit & Loss,Expenses,Cr,INVENTORY_CHG_CLOSING_TRADED
+Changes in Inventories of FG and WIP,"Changes in inventories of finished goods, WIP and Stock-in-Trade","Changes in inventories of finished goods, WIP and Stock-in-Trade",Profit & Loss,Expenses,Dr,INVENTORY_CHG_NET
+Changes in Inventories,"Changes in inventories of finished goods, WIP and Stock-in-Trade","Changes in inventories of finished goods, WIP and Stock-in-Trade",Profit & Loss,Expenses,Dr,INVENTORY_CHG_NET
+Changes in Inventory,"Changes in inventories of finished goods, WIP and Stock-in-Trade","Changes in inventories of finished goods, WIP and Stock-in-Trade",Profit & Loss,Expenses,Dr,INVENTORY_CHG_NET
+Changes in inventories of finished goods,"Changes in inventories of finished goods, WIP and Stock-in-Trade","Changes in inventories of finished goods, WIP and Stock-in-Trade",Profit & Loss,Expenses,Dr,INVENTORY_CHG_NET
+Salaries and Wages,Employee benefits expense,Employee benefits expense,Profit & Loss,Expenses,Dr,EMPLOYEE_EXPENSE
+Directors Remuneration,Employee benefits expense,Employee benefits expense,Profit & Loss,Expenses,Dr,EMPLOYEE_EXPENSE
+Staff Welfare Expenses,Employee benefits expense,Employee benefits expense,Profit & Loss,Expenses,Dr,EMPLOYEE_EXPENSE
+Contribution to Provident Fund (PF),Employee benefits expense,Employee benefits expense,Profit & Loss,Expenses,Dr,EMPLOYEE_EXPENSE
+Contribution to ESIC,Employee benefits expense,Employee benefits expense,Profit & Loss,Expenses,Dr,EMPLOYEE_EXPENSE
+Gratuity Expense,Employee benefits expense,Employee benefits expense,Profit & Loss,Expenses,Dr,EMPLOYEE_EXPENSE
+Leave Encashment Expense,Employee benefits expense,Employee benefits expense,Profit & Loss,Expenses,Dr,EMPLOYEE_EXPENSE
+Staff Bonus & Ex-Gratia,Employee benefits expense,Employee benefits expense,Profit & Loss,Expenses,Dr,EMPLOYEE_EXPENSE
+Employee Stock Option Expense (ESOP),Employee benefits expense,Employee benefits expense,Profit & Loss,Expenses,Dr,EMPLOYEE_EXPENSE
+Medical Reimbursements to Staff,Employee benefits expense,Employee benefits expense,Profit & Loss,Expenses,Dr,EMPLOYEE_EXPENSE
+Interest on Term Loans,Finance costs,Finance costs,Profit & Loss,Expenses,Dr,FINANCE_COST_INTEREST
+Interest on Working Capital / Cash Credit,Finance costs,Finance costs,Profit & Loss,Expenses,Dr,FINANCE_COST_INTEREST
+Interest on Lease Liability (Ind AS 116),Finance costs,Finance costs,Profit & Loss,Expenses,Dr,FINANCE_COST_LEASE
+Bank Charges and Processing Fees,Finance costs,Finance costs,Profit & Loss,Expenses,Dr,FINANCE_COST_OTHER
+Loan Processing Charges,Finance costs,Finance costs,Profit & Loss,Expenses,Dr,FINANCE_COST_OTHER
+Interest on Statutory Dues (TDS / GST),Finance costs,Finance costs,Profit & Loss,Expenses,Dr,FINANCE_COST_OTHER
+Depreciation on Plant & Machinery,Depreciation and amortisation expense,Depreciation and amortisation expense,Profit & Loss,Expenses,Dr,DEPRECIATION_EXPENSE
+Depreciation on Buildings,Depreciation and amortisation expense,Depreciation and amortisation expense,Profit & Loss,Expenses,Dr,DEPRECIATION_EXPENSE
+Depreciation on Vehicles,Depreciation and amortisation expense,Depreciation and amortisation expense,Profit & Loss,Expenses,Dr,DEPRECIATION_EXPENSE
+Depreciation on Computers & Servers,Depreciation and amortisation expense,Depreciation and amortisation expense,Profit & Loss,Expenses,Dr,DEPRECIATION_EXPENSE
+Amortisation of Software Licenses,Depreciation and amortisation expense,Depreciation and amortisation expense,Profit & Loss,Expenses,Dr,AMORTISATION_EXPENSE
+Amortisation of Intangible Assets,Depreciation and amortisation expense,Depreciation and amortisation expense,Profit & Loss,Expenses,Dr,AMORTISATION_EXPENSE
+Depreciation on Right-of-Use Assets,Depreciation and amortisation expense,Depreciation and amortisation expense,Profit & Loss,Expenses,Dr,DEPRECIATION_EXPENSE
+"Power, Fuel & Water Charges",Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Rent for Factory & Office,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Repairs & Maintenance - Plant & Machinery,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Repairs & Maintenance - Buildings,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Repairs & Maintenance - Others,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+"Insurance Expense (Plant, Stock & Vehicles)",Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Rates and Taxes (Municipal Tax),Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Advertising and Marketing Expenses,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Sales Promotion and Brand Building,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Freight Outward / Carriage Outward,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Clearing & Forwarding Charges (C&F),Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Travelling and Conveyance Expenses,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Legal and Professional Charges,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Statutory Auditor Remuneration - Audit Fee,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,AUDIT_FEE
+Auditor Reimbursement of Expenses,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,AUDIT_FEE
+Tax Audit Fee,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,AUDIT_FEE
+"Communication, Telephone & Internet",Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Printing and Stationery,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Security Agency Charges,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Housekeeping and Sanitation,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Corporate Social Responsibility (CSR) Expense,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,CSR_EXPENSE
+Bad Debts Written Off,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,BAD_DEBTS
+Provision for Doubtful Debts Expense,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,PROVISION_DOUBTFUL_EXPENSE
+Loss on Sale of Fixed Assets,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,LOSS_ON_SALE_ASSET
+Foreign Exchange Loss (Net),Other expenses,Other expenses,Profit & Loss,Expenses,Dr,FOREX_LOSS
+Donations and Charity,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Subscription and Membership Fees,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Vehicle Running & Fuel Expenses,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Packaging Expenses,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Stores and Spares Consumed,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,STORES_CONSUMED
+Miscellaneous Operating Expenses,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Current Income Tax Expense,Current tax expense,Current tax expense,Profit & Loss,Tax & OCI,Dr,CURRENT_TAX_EXPENSE
+Income Tax for Prior Years,Current tax expense,Current tax expense,Profit & Loss,Tax & OCI,Dr,PRIOR_PERIOD_TAX
+Deferred Tax Expense,Deferred tax expense / (credit),Deferred tax expense / (credit),Profit & Loss,Tax & OCI,Dr,DEFERRED_TAX_EXPENSE
+Remeasurement of Defined Benefit Plans (OCI),Reserves and Surplus,Other Comprehensive Income / (Loss),Profit & Loss,Tax & OCI,Cr,OCI_ITEM
+Sundry Debtors,Trade receivables,Financial Assets - Trade receivables,Balance Sheet,Current Assets,Dr,TRADE_RECEIVABLES
+Sundry Creditors,Trade payables - Dues of creditors other than MSME,Financial Liabilities - Trade payables - Dues of Others,Balance Sheet,Current Liabilities,Cr,NON_MSME_PAYABLE
+Bank Accounts,Cash and bank balances,Financial Assets - Cash and cash equivalents,Balance Sheet,Current Assets,Dr,BANK_BALANCE
+Cash-in-hand,Cash and bank balances,Financial Assets - Cash and cash equivalents,Balance Sheet,Current Assets,Dr,CASH_IN_HAND
+Stock-in-hand,Inventories,Inventories,Balance Sheet,Current Assets,Dr,INVENTORY_GENERAL
+Duties & Taxes,Other current liabilities,Other current liabilities,Balance Sheet,Current Liabilities,Cr,STATUTORY_DUES_PAYABLE
+Secured Loans,Long-term borrowings,Financial Liabilities - Non-current Borrowings,Balance Sheet,Non-Current Liabilities,Cr,LONG_TERM_BORROWING
+Unsecured Loans,Long-term borrowings,Financial Liabilities - Non-current Borrowings,Balance Sheet,Non-Current Liabilities,Cr,LONG_TERM_BORROWING
+Sales Account,Revenue from operations,Revenue from operations,Profit & Loss,Income,Cr,REVENUE_SALES
+Purchase Account,Cost of materials consumed,Cost of materials consumed,Profit & Loss,Expenses,Dr,RAW_MATERIAL_PURCHASE
+Carriage Inwards,Cost of materials consumed,Cost of materials consumed,Profit & Loss,Expenses,Dr,RAW_MATERIAL_PURCHASE
+Carriage Outwards,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Factory Rent,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Discount Allowed,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,SALES_DISCOUNT
+Discount Received,Other income,Other income,Profit & Loss,Income,Cr,OTHER_INCOME_MISC
+Bad Debts Recovered,Other income,Other income,Profit & Loss,Income,Cr,OTHER_INCOME_MISC
+Interest on Fixed Deposit,Other income,Other income,Profit & Loss,Income,Cr,OTHER_INCOME_INTEREST
+Interest on Income Tax Refund,Other income,Other income,Profit & Loss,Income,Cr,OTHER_INCOME_INTEREST
+Interest on Term Loan,Finance costs,Finance costs,Profit & Loss,Expenses,Dr,FINANCE_COST_INTEREST
+Interest on Cash Credit / Overdraft,Finance costs,Finance costs,Profit & Loss,Expenses,Dr,FINANCE_COST_INTEREST
+ROC Filing Fees,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Sitting Fees to Directors,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Internal Audit Fees,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,AUDIT_FEE
+Secretarial Audit Fees,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,AUDIT_FEE
+Postage and Courier Expenses,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Tea and Refreshments,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Conveyance Expenses,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Keyman Insurance Premium,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Trade License and Municipal Fees,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Cloud Hosting & Server Charges,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Software AMC & Maintenance,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Website & Domain Charges,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+"Tooling, Dies and Moulds","Property, Plant and Equipment (Tangible Assets)","Property, Plant and Equipment",Balance Sheet,Non-Current Assets,Dr,PPE_ASSET
+Testing and Laboratory Charges,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Sub-contracting and Jobwork Charges,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Labour Charges,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Factory Electricity & Power,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Factory Water Charges,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Ocean Freight Charges,Cost of materials consumed,Cost of materials consumed,Profit & Loss,Expenses,Dr,RAW_MATERIAL_PURCHASE
+Air Freight Charges,Cost of materials consumed,Cost of materials consumed,Profit & Loss,Expenses,Dr,RAW_MATERIAL_PURCHASE
+Customs Clearing & Handling Charges,Cost of materials consumed,Cost of materials consumed,Profit & Loss,Expenses,Dr,RAW_MATERIAL_PURCHASE
+Sales Promotion Samples Distributed,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+AGM & Board Meeting Expenses,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+GST Late Fees & Penalties,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Interest u/s 234A/234B/234C,Finance costs,Finance costs,Profit & Loss,Expenses,Dr,FINANCE_COST_OTHER
+Security Guard Expenses,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+EPF Administrative Charges,Employee benefits expense,Employee benefits expense,Profit & Loss,Expenses,Dr,EMPLOYEE_EXPENSE
+Vehicle Repairs and Servicing,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Pooja and Festival Expenses,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Books & Periodicals,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Telephone and Mobile Expenses,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Internet and Broadband Expenses,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Office Cleaning & Sanitisers,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Office Stationery and Supplies,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Courier and Speed Post Charges,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Bank Locker Rent,Other expenses,Other expenses,Profit & Loss,Expenses,Dr,OPERATING_EXPENSE
+Cheque Book Charges,Finance costs,Finance costs,Profit & Loss,Expenses,Dr,FINANCE_COST_OTHER
+Forex Card Charges,Finance costs,Finance costs,Profit & Loss,Expenses,Dr,FINANCE_COST_OTHER
+LC Opening & Issuance Charges,Finance costs,Finance costs,Profit & Loss,Expenses,Dr,FINANCE_COST_OTHER
+Bank Guarantee Charges,Finance costs,Finance costs,Profit & Loss,Expenses,Dr,FINANCE_COST_OTHER
