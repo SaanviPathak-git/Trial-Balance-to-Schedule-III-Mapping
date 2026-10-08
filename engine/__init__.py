@@ -40,6 +40,13 @@ from .checks import (
 from .excel_export import (
     generate_schedule_iii_excel,
 )
+from .adjustments import (
+    AdjustmentJournalEntry,
+    parse_english_adjustment_line,
+    parse_adjustments_block,
+    apply_adjustments_to_tb,
+    parse_inr_amount,
+)
 
 __all__ = [
     "validate_trial_balance",
@@ -65,4 +72,9 @@ __all__ = [
     "AuditChecksSummary",
     "AuditCheckItem",
     "generate_schedule_iii_excel",
+    "AdjustmentJournalEntry",
+    "parse_english_adjustment_line",
+    "parse_adjustments_block",
+    "apply_adjustments_to_tb",
+    "parse_inr_amount",
 ]

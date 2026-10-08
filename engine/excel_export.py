@@ -32,7 +32,8 @@ def generate_schedule_iii_excel(
     audit_summary: AuditChecksSummary,
     ratios: List[RatioResult],
     treatment_logs: List[TreatmentLogEntry],
-    company_name: str = "Corporate Entity Limited"
+    company_name: str = "Corporate Entity Limited",
+    adjustments_worksheet: Optional[pd.DataFrame] = None
 ) -> io.BytesIO:
     """
     Creates the comprehensive audit-ready Schedule III Excel workbook.
@@ -471,6 +472,42 @@ def generate_schedule_iii_excel(
         for col_idx in range(2, 7):
             ws_disc.cell(row=curr_row, column=col_idx).border = thin_border
         curr_row += 1
+
+    # -------------------------------------------------------------
+    # 9. AUDIT ADJUSTMENT JVs (IF ANY)
+    # -------------------------------------------------------------
+    if adjustments_worksheet is not None and not adjustments_worksheet.empty:
+        ws_adj = wb.create_sheet(title="Adjustments & JVs")
+        ws_adj.views.sheetView[0].showGridLines = True
+
+        ws_adj.cell(row=2, column=2, value=f"{company_name}").font = font_title
+        ws_adj.cell(row=3, column=2, value="Natural Language Audit Adjustments & Posted Journal Vouchers").font = font_subtitle
+
+        headers_adj = ["JV ID", "Debit Account", "Credit Account", "Amount (₹)", "Narration", "Category", "Original English Text"]
+        for col_idx, h in enumerate(headers_adj, start=2):
+            c = ws_adj.cell(row=5, column=col_idx, value=h)
+            c.font = font_tbl_header
+            c.fill = navy_header_fill
+            c.alignment = Alignment(horizontal="center")
+
+        curr_row = 6
+        for _, jv in adjustments_worksheet.iterrows():
+            ws_adj.cell(row=curr_row, column=2, value=str(jv.get("JV ID", ""))).font = font_bold
+            ws_adj.cell(row=curr_row, column=3, value=str(jv.get("Debit Account", ""))).font = font_bold
+            ws_adj.cell(row=curr_row, column=4, value=str(jv.get("Credit Account", ""))).font = font_bold
+
+            c_amt = ws_adj.cell(row=curr_row, column=5, value=float(jv.get("Amount (₹)", 0.0)))
+            c_amt.font = font_regular
+            c_amt.number_format = "#,##0.00"
+            c_amt.alignment = Alignment(horizontal="right")
+
+            ws_adj.cell(row=curr_row, column=6, value=str(jv.get("Narration", ""))).font = font_regular
+            ws_adj.cell(row=curr_row, column=7, value=str(jv.get("Category", ""))).font = font_regular
+            ws_adj.cell(row=curr_row, column=8, value=str(jv.get("Original English Text", ""))).font = font_regular
+
+            for col_idx in range(2, 9):
+                ws_adj.cell(row=curr_row, column=col_idx).border = thin_border
+            curr_row += 1
 
     # Auto-adjust column widths across all sheets
     for sheet in wb.worksheets:

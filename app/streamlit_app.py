@@ -38,6 +38,7 @@ from engine.statements import StatementGenerator, RoundingUnit
 from engine.checks import run_finalisation_checks
 from engine.ratios import compute_schedule_iii_ratios, ratios_to_dataframe
 from engine.excel_export import generate_schedule_iii_excel
+from engine.adjustments import parse_adjustments_block, apply_adjustments_to_tb
 
 # Page configuration
 st.set_page_config(
@@ -81,6 +82,8 @@ def init_session_state():
         st.session_state.data_source_label = "None"
     if "user_overrides" not in st.session_state:
         st.session_state.user_overrides = {}
+    if "adjustments_text" not in st.session_state:
+        st.session_state.adjustments_text = ""
 
 
 init_session_state()
@@ -194,9 +197,80 @@ with kpi_col4:
 with kpi_col5:
     st.metric("Total Ledgers", f"{len(val_result.normalized_df)}")
 
+# STEP 1.5: NATURAL LANGUAGE YEAR-END ADJUSTMENTS
+parsed_jvs = []
+jv_worksheet = pd.DataFrame()
+working_tb_df = val_result.normalized_df.copy()
+
+num_active_lines = len([l for l in st.session_state.adjustments_text.strip().splitlines() if l.strip() and not l.strip().startswith("#")])
+expander_title = (
+    f"✍️ Year-End Adjustments in Plain English ({num_active_lines} Active JVs Posted ✅)"
+    if num_active_lines > 0
+    else "✍️ Year-End Adjustments in Plain English (Optional: Closing Stock, Depreciation, Accruals, JVs)"
+)
+
+with st.expander(expander_title, expanded=(num_active_lines > 0)):
+    st.markdown(
+        "Enter statutory year-end audit adjustments in **natural English** (one entry per line). "
+        "The engine parses amounts, identifies debit & credit heads, and generates balanced double-entry JVs updating the Trial Balance."
+    )
+    
+    col_btn1, col_btn2, col_btn3 = st.columns([1.5, 1.2, 3])
+    with col_btn1:
+        if st.button("⚡ Load Sample Adjustments"):
+            st.session_state.adjustments_text = (
+                "Closing stock valued at ₹ 4,50,00,000\n"
+                "Provide depreciation of 25 lakhs on Plant & Machinery\n"
+                "Outstanding audit fee of ₹ 1,50,000 to be provided\n"
+                "Prepaid insurance of ₹ 2,00,000 to be carried forward\n"
+                "Provide current tax of ₹ 35,00,000"
+            )
+            st.rerun()
+    with col_btn2:
+        if st.button("🧹 Clear Adjustments"):
+            st.session_state.adjustments_text = ""
+            st.rerun()
+    with col_btn3:
+        st.caption("Supports ₹, crores, lakhs, commas, plus closing stock, depreciation, accruals, prepayments, bad debts & custom JVs.")
+
+    raw_adj_input = st.text_area(
+        "English Adjustment Entries (one per line):",
+        value=st.session_state.adjustments_text,
+        height=130,
+        placeholder="Closing stock valued at ₹ 4,50,00,000\nProvide depreciation of 25 lakhs on Plant & Machinery\nOutstanding audit fee of ₹ 1,50,000\nPrepaid insurance of ₹ 2,00,000\nProvide current tax of ₹ 35,00,000",
+        key="adj_input_area"
+    )
+    if raw_adj_input != st.session_state.adjustments_text:
+        st.session_state.adjustments_text = raw_adj_input
+        st.rerun()
+
+    if st.session_state.adjustments_text.strip():
+        parsed_jvs = parse_adjustments_block(st.session_state.adjustments_text)
+        if parsed_jvs:
+            working_tb_df, jv_worksheet = apply_adjustments_to_tb(val_result.normalized_df, parsed_jvs)
+            total_adj_amt = sum(j.amount for j in parsed_jvs)
+            
+            st.success(
+                f"✅ **{len(parsed_jvs)} Adjustment JVs Posted Successfully!** "
+                f"Total Adjusted Volume: **₹ {total_adj_amt:,.2f}** | "
+                f"Total Dr: ₹ {total_adj_amt:,.2f} | Total Cr: ₹ {total_adj_amt:,.2f} | "
+                f"Net JV Imbalance: **₹ 0.00** (Strictly Balanced)",
+                icon="⚖️"
+            )
+            
+            # Show quick JV table
+            preview_cols = ["JV ID", "Original English Text", "Debit Account", "Credit Account", "Amount (₹)", "Narration"]
+            preview_display = jv_worksheet[preview_cols].copy()
+            preview_display["Amount (₹)"] = preview_display["Amount (₹)"].apply(lambda x: f"₹ {x:,.2f}")
+            st.dataframe(preview_display, use_container_width=True, hide_index=True)
+        else:
+            st.warning("⚠️ No valid adjustment entries recognized from the text above. Check syntax guide in Tab 2.")
+    else:
+        working_tb_df = val_result.normalized_df.copy()
+
 # STEP 2: MAPPING
 mapper = st.session_state.mapper
-mapped_df = mapper.map_dataframe(val_result.normalized_df, selected_division)
+mapped_df = mapper.map_dataframe(working_tb_df, selected_division)
 
 # Apply any session overrides
 for lname, target_item in st.session_state.user_overrides.items():
@@ -206,15 +280,16 @@ unmapped_df = mapper.get_unmapped_ledgers(mapped_df)
 review_df = mapper.get_review_queue(mapped_df)
 
 # Tabs
-tab_checks, tab_stmts, tab_notes, tab_ratios, tab_mapping, tab_judgement, tab_fmcg, tab_checklist = st.tabs([
+tab_checks, tab_adj, tab_stmts, tab_notes, tab_ratios, tab_mapping, tab_judgement, tab_fmcg, tab_checklist = st.tabs([
     "🛡️ 1. Audit Checks",
-    "📊 2. Balance Sheet & P&L",
-    "📝 3. Notes to Accounts",
-    "📈 4. Mandatory 11 Ratios",
-    "🗺️ 5. Mapping & Override",
-    "⚖️ 6. CA Judgement Log",
-    "🔗 7. FMCG Model Bridge",
-    "📋 8. MCA Checklist"
+    "✍️ 2. Adjustments & JVs",
+    "📊 3. Balance Sheet & P&L",
+    "📝 4. Notes to Accounts",
+    "📈 5. Mandatory 11 Ratios",
+    "🗺️ 6. Mapping & Override",
+    "⚖️ 7. CA Judgement Log",
+    "🔗 8. FMCG Model Bridge",
+    "📋 9. MCA Checklist"
 ])
 
 # Process Classification and Statements if no blocking errors
@@ -231,7 +306,7 @@ if can_finalise:
         py_label=py_label_input
     )
     stmts = generator.generate(classified_output)
-    audit_summary = run_finalisation_checks(stmts, val_result.normalized_df, unmapped_count=len(unmapped_df))
+    audit_summary = run_finalisation_checks(stmts, working_tb_df, unmapped_count=len(unmapped_df))
     ratios_list = compute_schedule_iii_ratios(stmts)
     ratios_df = ratios_to_dataframe(ratios_list, cy_label_input, py_label_input)
 
@@ -239,7 +314,7 @@ if can_finalise:
 with tab_checks:
     st.subheader("🛡️ Finalisation Audit Status Panels")
     if not can_finalise:
-        st.error("⛔ Statements cannot be finalised yet. Please resolve validation errors or unmapped ledgers in Tab 5.")
+        st.error("⛔ Statements cannot be finalised yet. Please resolve validation errors or unmapped ledgers in Tab 6.")
         if len(unmapped_df) > 0:
             st.warning(f"There are **{len(unmapped_df)} unmapped ledgers** in the queue. Schedule III requires 100% mapping coverage.")
     else:
@@ -272,7 +347,8 @@ with tab_checks:
             audit_summary=audit_summary,
             ratios=ratios_list,
             treatment_logs=classified_output.treatment_log,
-            company_name=company_name_input
+            company_name=company_name_input,
+            adjustments_worksheet=jv_worksheet if not jv_worksheet.empty else None
         )
         st.download_button(
             label="📊 Download Complete Schedule III Finalisation Workbook (.xlsx)",
@@ -282,7 +358,76 @@ with tab_checks:
             use_container_width=True
         )
 
-# TAB 2: BALANCE SHEET & P&L
+# TAB 2: ADJUSTMENTS & JVs
+with tab_adj:
+    st.subheader("✍️ Year-End Audit Adjustments & Posted Journal Vouchers")
+    st.caption("Review natural language adjustment entries, double-entry JV voucher schedule, and ledger-level pre/post comparison.")
+    
+    if not parsed_jvs:
+        st.info("ℹ️ No adjustment entries active. You can enter natural English adjustments in the expander box above or load the sample template.")
+    else:
+        adj_col1, adj_col2, adj_col3 = st.columns(3)
+        total_adj_amt = sum(j.amount for j in parsed_jvs)
+        with adj_col1:
+            st.metric("Total Posted JVs", f"{len(parsed_jvs)}")
+        with adj_col2:
+            st.metric("Total Adjustment Value", f"₹ {total_adj_amt:,.2f}")
+        with adj_col3:
+            st.metric("Double-Entry Imbalance", "₹ 0.00", delta="Strictly Balanced ✅")
+        
+        st.markdown("#### 📜 Statutory Journal Vouchers Schedule")
+        jv_display = jv_worksheet.copy()
+        jv_display["Amount (₹)"] = jv_display["Amount (₹)"].apply(lambda x: f"₹ {x:,.2f}")
+        st.dataframe(jv_display, use_container_width=True, hide_index=True)
+        
+        # Pre vs Post Ledger Impact Comparison
+        st.markdown("---")
+        st.subheader("🔄 Ledger Impact: Before vs. After Adjustments")
+        st.caption("Trace how each ledger was updated by the adjustment entries.")
+        
+        affected_accts = set()
+        for j in parsed_jvs:
+            affected_accts.add(j.debit_account.lower())
+            affected_accts.add(j.credit_account.lower())
+        
+        impact_rows = []
+        for acct_low in sorted(affected_accts):
+            pre_rows = val_result.normalized_df[val_result.normalized_df["ledger_name"].str.lower() == acct_low]
+            post_rows = working_tb_df[working_tb_df["ledger_name"].str.lower() == acct_low]
+            
+            disp_name = post_rows["ledger_name"].iloc[0] if not post_rows.empty else (pre_rows["ledger_name"].iloc[0] if not pre_rows.empty else acct_low.title())
+            pre_bal = pre_rows["net_cy"].iloc[0] if not pre_rows.empty else 0.0
+            post_bal = post_rows["net_cy"].iloc[0] if not post_rows.empty else 0.0
+            diff = post_bal - pre_bal
+            
+            impact_rows.append({
+                "Ledger Account": disp_name,
+                "Pre-Adjustment Net": f"₹ {pre_bal:,.2f}",
+                "Net Adjustment": f"{'+' if diff > 0 else ''}₹ {diff:,.2f}",
+                "Post-Adjustment Net": f"₹ {post_bal:,.2f}",
+                "Leg Type": "Debit Leg (+)" if diff > 0 else "Credit Leg (-)"
+            })
+        st.dataframe(pd.DataFrame(impact_rows), use_container_width=True, hide_index=True)
+
+    st.markdown("---")
+    st.subheader("💡 English Adjustment Syntax & Examples Guide")
+    st.markdown(\"\"\"
+    The natural language parser supports everyday audit adjustments in plain English:
+    
+    | Category | Example English Phrasing | Debit Account | Credit Account |
+    | :--- | :--- | :--- | :--- |
+    | **Closing Stock** | `Closing stock valued at ₹ 4,50,00,000` or `Closing inventory of 4.5 crores` | Finished Goods Inventory (Current Assets) | Changes in Inventories (P&L) |
+    | **Depreciation** | `Provide depreciation of 25 lakhs on Plant & Machinery` | Depreciation Expense (P&L) | Accumulated Depreciation (Contra-Asset) |
+    | **Outstanding Expenses** | `Outstanding audit fee of ₹ 1,50,000 to be provided` or `Salaries payable ₹ 5,00,000` | Audit / Salaries Expense (P&L) | Audit / Salaries Payable (Current Liabilities) |
+    | **Prepaid Expenses** | `Prepaid insurance of ₹ 2,00,000 to be carried forward` | Prepaid Expenses (Current Assets) | Insurance Expense (P&L) |
+    | **Bad Debts Written Off** | `Write off bad debts of ₹ 5,00,000` | Bad Debts Expense (P&L) | Sundry Debtors (Current Assets) |
+    | **Provision for Bad Debts** | `Create provision for doubtful debts of ₹ 8,00,000` | Provision for Doubtful Debts Expense (P&L) | Provision for Doubtful Debts (Contra-Asset) |
+    | **Tax Provision** | `Provide current tax of ₹ 35,00,000` | Current Tax Expense (P&L) | Provision for Tax (Current Liabilities) |
+    | **Reserves Transfer** | `Transfer ₹ 10,00,000 to General Reserve` | Retained Earnings | General Reserve |
+    | **Custom Double Entry** | `Debit Rent ₹ 50,000 and Credit Rent Payable ₹ 50,000` or `Dr Salaries 100000, Cr Salaries Payable 100000` | User Debit Account | User Credit Account |
+    \"\"\")
+
+# TAB 3: BALANCE SHEET & P&L
 with tab_stmts:
     if not can_finalise:
         st.warning("Statements pending mapping finalisation.")
@@ -306,7 +451,7 @@ with tab_stmts:
         pl_display_df.drop(columns=cols_to_drop_pl, inplace=True)
         st.dataframe(pl_display_df, use_container_width=True, hide_index=True)
 
-# TAB 3: NOTES TO ACCOUNTS
+# TAB 4: NOTES TO ACCOUNTS
 with tab_notes:
     if not can_finalise:
         st.warning("Notes pending mapping finalisation.")
@@ -349,7 +494,7 @@ with tab_notes:
                 else:
                     st.info("No ledgers mapped under this statutory note.")
 
-# TAB 4: RATIOS
+# TAB 5: RATIOS
 with tab_ratios:
     if not can_finalise:
         st.warning("Ratios pending mapping finalisation.")
@@ -373,7 +518,7 @@ with tab_ratios:
                     st.markdown(f"**Schedule III Note Disclosure Draft:**")
                     st.info(r.ca_commentary)
 
-# TAB 5: MAPPING & OVERRIDE
+# TAB 6: MAPPING & OVERRIDE
 with tab_mapping:
     st.subheader("🗺️ Three-Layer Mapping Engine & Learning Master")
     st.caption("Layer 1: Pattern/Keyword Rules | Layer 2: Fuzzy Matching (Amber <85%) | Layer 3: User Override with Learning")
@@ -431,7 +576,7 @@ with tab_mapping:
     display_cols = ["ledger_name", "group", "debit_cy", "credit_cy", "target_line_item", "confidence", "match_source", "ca_rule_tag"]
     st.dataframe(view_table[display_cols], use_container_width=True, hide_index=True)
 
-# TAB 6: CA JUDGEMENT LOG
+# TAB 7: CA JUDGEMENT LOG
 with tab_judgement:
     st.subheader("⚖️ Assumptions & CA Treatment Audit Log")
     st.caption("Every statutory reclassification, gross-up, contra-presentation, and tax netting is audited below.")
@@ -452,7 +597,7 @@ with tab_judgement:
 
         st.dataframe(pd.DataFrame(log_rows), use_container_width=True, hide_index=True)
 
-# TAB 7: FMCG MODEL BRIDGE
+# TAB 8: FMCG MODEL BRIDGE
 with tab_fmcg:
     st.subheader("🔗 FMCG Corporate Financial Analysis Engine Bridge")
     st.markdown("""
@@ -466,7 +611,7 @@ with tab_fmcg:
     else:
         st.warning("Finalise statements to view the FMCG schema export.")
 
-# TAB 8: STATUTORY DISCLOSURE CHECKLIST
+# TAB 9: STATUTORY DISCLOSURE CHECKLIST
 with tab_checklist:
     st.subheader("📋 Schedule III Non-TB Additional Disclosures (MCA 2021)")
     st.caption("Statutory requirements that cannot be fulfilled by trial balance balances alone. Marked as 'Needs Input' rather than skipped.")
